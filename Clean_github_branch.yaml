@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: staffing-devtools
+  annotations:
+    iam.amazonaws.com/role: k8s-jenkins-worker
+spec:
+  containers:
+    - name: autorelease
+      image: 308468083477.dkr.ecr.us-east-1.amazonaws.com/jenkins-release
+      command: ['/bin/sh', '-ec', 'sleep infinity & wait']
