@@ -12,7 +12,7 @@ pipeline {
 
   agent {
     kubernetes {
-      yamlFile 'jobs/Clean_github_branch.yaml'
+      yamlFile 'Clean_github_branch.yaml'
       defaultContainer 'autorelease'
     }
   }
