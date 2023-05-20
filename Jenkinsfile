@@ -27,7 +27,7 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'github-eisdev-token', variable: 'gh-token')]) {
           sh '''
-                apt-get install -y gh
+                sudo apt-get install -y gh
                 echo $gh-token | gh auth login --with-token
                 TARGET=$(date -d "+180 days" "+%Y-%m-%d")
                 for repo in $(gh repo list aquent --limit 200 --json name | jq -r .[].name)
